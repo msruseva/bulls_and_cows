@@ -32,7 +32,7 @@ class Computer(Player):
         else:
             return False
 
-    """Return name of the player
+    """Return name of the computer
     """
 
     def player_name(self):
