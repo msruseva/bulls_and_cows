@@ -4,10 +4,10 @@ from player import Player
 
 class Computer(Player):
 
-    def __init__(self):
-        self.number = self.generate_number()
+    """Set number to the computer
+    """
 
-    def generate_number(self):
+    def ask_for_number(self):
         number = 0
 
         while number < 1000:
@@ -15,11 +15,25 @@ class Computer(Player):
 
         print "Computer number is {}".format(number)
 
-        return str(number)
+        self.number = str(number)
 
-    def make_a_guess(self):
+    """Return boolean if the computer has won or not
+    """
+
+    def play_turn(self, number):
         guess = str(''.join(random.sample("0123456789", 4)))
 
         print "Computer guess number is: {}".format(guess)
 
-        return guess
+        if self.bulls_and_cows(number, guess):
+            print "The computer has won!"
+
+            return True
+        else:
+            return False
+
+    """Return name of the player
+    """
+
+    def player_name(self):
+        return "Computer"
