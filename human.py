@@ -3,19 +3,44 @@ from player import Player
 
 class Human(Player):
 
+    """Return boolean if the player number is valid
+    """
+
     def correct_number(self, number):
         return len(number) == 4 and number[0] != '0' and number.isdigit() and len(set(list(number))) == 4
 
-    def ask_for_number(self):
-        return self.ask('Enter your number: ')
+    """Set the human number to instance variable
+    """
 
-    def make_a_guess(self):
-        return self.ask('Enter your guess number: ')
+    def ask_for_number(self):
+        self.number = self.ask('Enter your number: ')
+
+    """Return the guess of the player(human)
+    """
 
     def ask(self, prompt):
-        user_guess = raw_input(prompt)
+        guess = raw_input(prompt)
 
-        while not self.correct_number(user_guess):
-            user_guess = raw_input('Invalid number. Try again: ')
+        while not self.correct_number(guess):
+            guess = raw_input('Invalid number. Try again: ')
 
-        return user_guess
+        return guess
+
+    """Return boolean if the human has won or not
+    """
+
+    def play_turn(self, number):
+        guess = self.ask('Enter your guess number: ')
+
+        if self.bulls_and_cows(number, guess):
+            print "You have won!"
+
+            return True
+        else:
+            return False
+
+    """Return name of the human
+    """
+
+    def player_name(self):
+        return "You"
