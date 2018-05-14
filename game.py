@@ -1,30 +1,45 @@
-import pdb
 from human import Human
 from computer import Computer
 from player import Player
 
+
 class Game:
 
-    def __init__(self):
-        self.user_player = Human()
-        self.computer_player = Computer()
-        self.current_player = self.user_player
+    def __init__(self, first_player, second_player):
+        self.first_player = first_player
+        self.second_player = second_player
+
+    """Run the game and return message after the end of the game
+
+    The two options for the player after the end of the game is
+    to start another or to quit the game.
+    """
 
     def play(self):
-        number = self.user_player.ask_for_number()
+        self.first_player.ask_for_number()
+        self.second_player.ask_for_number()
 
-        while True:
-            guess = self.current_player.make_a_guess()
+        winner = None
+        loser = None
 
-            if Player().bulls_and_cows(self.computer_player.number, guess):
-                break
-            else:
-                self.change_player()
+        while winner == None:
+            if self.first_player.play_turn(self.second_player.number):
+                winner = self.first_player
+                loser = self.second_player
 
-    def change_player(self):
-        if self.current_player == self.user_player:
-            self.current_player = self.computer_player
+            if winner == None:
+                if self.second_player.play_turn(self.first_player.number):
+                    winner = self.second_player
+                    loser = self.first_player
+
+        play_again = raw_input("Play another game? Enter 'y' for yes: ")
+
+        if play_again == 'y':
+            loser.reset()
+            winner.reset()
+
+            Game(loser, winner).play()
         else:
-            self.current_player = self.user_player
+            print "Bye ^_^"
 
-Game().play()
+Game(Human(), Computer()).play()
