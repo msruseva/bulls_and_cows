@@ -6,7 +6,8 @@ Bulls and cows is an old code-breaking mind or paper and pencil game for two pla
 
 Download the game by entering the following command:
 
-```https://github.com/msruseva/bulls_and_cows
+```ruby
+https://github.com/msruseva/bulls_and_cows
 ```
 
 You need to have `python` 2.7 installed in order to play
@@ -15,6 +16,8 @@ You need to have `python` 2.7 installed in order to play
 
 Enter the following command to start the game:
 
-```$ python game.py```
+```ruby
+$ python game.py
+```
 
 This will open an interactive shell where you can play the game against a computer AI.
