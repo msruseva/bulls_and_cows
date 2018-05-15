@@ -23,6 +23,9 @@ class Computer(Player):
     def play_turn(self, number):
         guess = str(''.join(random.sample("0123456789", 4)))
 
+        while int(guess) < 1000:
+            guess = str(''.join(random.sample("0123456789", 4)))
+
         print "Computer guess number is: {}".format(guess)
 
         if self.bulls_and_cows(number, guess):
