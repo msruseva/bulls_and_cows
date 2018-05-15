@@ -6,7 +6,7 @@ Bulls and cows is an old code-breaking mind or paper and pencil game for two pla
 
 Download the game by entering the following command:
 
-```ruby
+```
 https://github.com/msruseva/bulls_and_cows
 ```
 
