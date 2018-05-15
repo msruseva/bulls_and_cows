@@ -10,7 +10,7 @@ Download the game by entering the following command:
 https://github.com/msruseva/bulls_and_cows
 ```
 
-You need to have `python` 2.7 installed in order to play
+You need to have `python` 2.7 installed in order to play the game.
 
 ## Starting the game
 
