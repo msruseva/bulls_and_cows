@@ -1,6 +1,6 @@
 # Bulls and Cows
 
-Bulls and cows is an old code-breaking mind or paper and pencil game for two players. 
+Bulls and cows is an old code-breaking mind or paper and pencil game for two players. The main idea of the game is to guess the number of the opponent, in this case the computer's number. The first player who guesses the number of his opponent wins the game. After the end of the game you can choose to play another game. If you type 'y' the opponent that had lost the previous game will have the change to give his guess first.
 
 ## Installation
 
