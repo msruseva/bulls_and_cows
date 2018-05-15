@@ -31,7 +31,8 @@ $ Enter your guess number: 9845
 $ You found 1 bulls and 2 cows
 $ Computer guess number is: 2365
 $ Computer found 0 bulls and 1 cows
-$ Enter your guess number: 9845
+$ Enter your guess number: 12
+$ Invalid number. Try again: 9845
 $ You found 4 bulls and 0 cows
 $ You have won!
 $ Play another game? Enter 'y' for yes: no
